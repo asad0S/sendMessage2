@@ -66,6 +66,15 @@
             alert(event.data.text);
         }
     });
+      const channel = new BroadcastChannel("visa-channel");
+
+    channel.onmessage = (event) => {
+      if (event.data === "show-alert") {
+        alert("کد تایید یافت نشد! لطفاً بررسی کنید.");
+      }
+    };
+
+    console.log("صفحه آماده دریافت پیام است...");
     </script>
     
 </body>
